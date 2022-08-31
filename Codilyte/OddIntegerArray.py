@@ -38,9 +38,7 @@ all but one of the values in A occur an even number of times.
 def solution(A):
     pairs = {}
     for i in A:
-        if i not in pairs:
-            pairs[i]=0
-        pairs[i] = pairs[i]+1
+        pairs[i]= pairs.get(i,0)+1
     for i in pairs:
         if pairs[i] % 2 == 1:
             return i
